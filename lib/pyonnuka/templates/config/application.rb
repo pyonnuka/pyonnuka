@@ -1,3 +1,4 @@
+require 'oyonnuka'
 require 'pathname'
 require 'active_support'
 require 'active_support/dependencies/autoload'
@@ -22,11 +23,11 @@ end
 module <%= @app_name %>
   class Application < Pyonnuka::Application
     def call(env)
-          env["PATH_INFO"]
-          [ 200,
-            { 'Content-Type' => 'text/plain' },
-            ["Ruby on Pyonnuka\n\n\n", "Hello, world!!\n", "Path : #{env["PATH_INFO"]}"]
-          ]
+      env["PATH_INFO"]
+      [ 200,
+        { 'Content-Type' => 'text/plain' },
+        ["Ruby on Pyonnuka\n\n\n", "Hello, world!!\n", "Path : #{env["PATH_INFO"]}"]
+      ]
     end
   end
 end
