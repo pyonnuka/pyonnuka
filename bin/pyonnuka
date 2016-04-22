@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'pyonnuka'
+require 'pyonnuka/helpers/commands'
 
 case ARGV[0]
 when 'new'
@@ -9,14 +10,10 @@ when 'new'
   generator = Pyonnuka::Generators::AppGenerator.new(app_name)
   generator.start
 when '-h'
-  puts <<"EOS"
-Example:
-    pyonnuka new ~/Code/Ruby/taskapp
-
-      This generates a skeletal Pyonnuka installation in ~/Code/Ruby/taskapp.
-      See the README in the newly created application to get going.
-EOS
-
+  Pyonnuka::Helpers::Commands.out_help
 when '-v'
   puts "Pyonnuka #{Pyonnuka::VERSION}"
+
+else
+  Pyonnuka::Helpers::Commands.out_help
 end
