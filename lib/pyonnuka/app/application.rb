@@ -6,7 +6,7 @@ module Pyonnuka
           production_option = 'all_of_the_world'
 
           if command[1] == production_option
-            on_server(' -p 8080 -o 0.0.0.0')
+            on_server(' -E production -p 8080 -o 0.0.0.0')
           elsif command[1].nil?
             on_server
           else
