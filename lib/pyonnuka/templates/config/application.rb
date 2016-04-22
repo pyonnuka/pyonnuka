@@ -1,4 +1,4 @@
-require 'oyonnuka'
+require 'pyonnuka'
 require 'pathname'
 require 'active_support'
 require 'active_support/dependencies/autoload'

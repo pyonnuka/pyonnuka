@@ -13,7 +13,7 @@ module Pyonnuka
           when 'new'
             app_path = command[1]
             return unless validate_app_path(app_path)
-            generator = Pyonnuka::Generators::AppGenerator.new(app_name)
+            generator = Pyonnuka::Generators::AppGenerator.new(app_path)
             generator.start
           when '-h'
             out_help
