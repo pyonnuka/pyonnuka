@@ -9,11 +9,7 @@ require 'active_support/core_ext/array/extract_options'
 module Pyonnuka
   extend ActiveSupport::Autoload
 
-  autoload :WelcomeController
-
   class << self
-    @application = @app_class = nil
-
     def application
       app = <%= @app_name %>::Application.new
     end
