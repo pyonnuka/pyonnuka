@@ -60,20 +60,20 @@ module Pyonnuka
       end
 
       def create_gemfile
-        ::FileUtils.cp(File.join(File.dirname(__FILE__), '../templates/Gemfile'), "#{@app_name}/Gemfile")
+        ::FileUtils.cp(File.join(File.dirname(__FILE__), './templates/Gemfile'), "#{@app_name}/Gemfile")
       end
 
       def create_configru
-        ::FileUtils.cp(File.join(File.dirname(__FILE__), '../templates/config.ru'), "#{@app_name}/config.ru")
+        ::FileUtils.cp(File.join(File.dirname(__FILE__), './templates/config.ru'), "#{@app_name}/config.ru")
       end
 
       def create_app
-        ::FileUtils.cp_r(File.join(File.dirname(__FILE__), '../templates/app/'), "#{@app_name}/app/")
+        ::FileUtils.cp_r(File.join(File.dirname(__FILE__), './templates/app/'), "#{@app_name}/app/")
       end
 
       def create_config
         ::FileUtils.mkdir("#{@app_name}/config")
-        erb = ::ERB.new(File.read(File.join(File.dirname(__FILE__), '../templates/config/application.rb')))
+        erb = ::ERB.new(File.read(File.join(File.dirname(__FILE__), './templates/config/application.rb')))
         File.open("#{@app_name}/config/application.rb", 'w') do |f|
           f.write(erb.result(binding))
         end
