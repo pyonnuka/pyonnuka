@@ -1,19 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'pyonnuka'
-require 'pyonnuka/helpers/commands'
+require 'pyonnuka/commands/command_task'
 
-case ARGV[0]
-when 'new'
-  raise 'error' if ARGV[1].nil?
-  app_name = ARGV[1]
-  generator = Pyonnuka::Generators::AppGenerator.new(app_name)
-  generator.start
-when '-h'
-  Pyonnuka::Helpers::Commands.out_help
-when '-v'
-  puts "Pyonnuka #{Pyonnuka::VERSION}"
+Pyonnuka::Command.discriminate_command(ARGV)
 
-else
-  Pyonnuka::Helpers::Commands.out_help
-end

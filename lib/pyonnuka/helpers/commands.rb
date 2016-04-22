@@ -1,6 +1,6 @@
 module Pyonnuka
   module Helpers
-    module Commands
+    class Command
       class << self
         def out_help
           puts <<"EOS"
@@ -13,6 +13,13 @@ Pyonnuka options:
     -h  # Show this help message
     -v  # Show this pyonnuka version
 EOS
+        end
+
+        def validate_app_path(app_path)
+          return true if app_path.present? && ['Pyonnuka', 'pyonnuka'].exclude?(app_path)
+
+          puts app_path.nil? ?  'required application path' : 'Invalid application name pyonnuka. Please choose another name'
+          false
         end
       end
     end
