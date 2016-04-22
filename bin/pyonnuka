@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'pyonnuka'
-require 'pyonnuka/commands/command_task'
+require 'pyonnuka/command'
 
 Pyonnuka::Command.discriminate_command(ARGV)
 

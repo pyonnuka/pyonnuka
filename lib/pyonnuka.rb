@@ -1,9 +1,8 @@
 require 'active_support'
 require 'active_support/core_ext'
 require 'pyonnuka/version'
-require 'pyonnuka/app/app_generator'
-require 'pyonnuka/helpers/commands'
-require 'pyonnuka/app/application'
+require 'pyonnuka/base'
+require 'slim'
 
 module Pyonnuka
   class Application
