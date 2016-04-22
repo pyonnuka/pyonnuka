@@ -1,5 +1,3 @@
-require 'pyonnuka/helpers/commands'
-
 module Pyonnuka
   class Command < Pyonnuka::Helpers::Command
     class << self
@@ -15,6 +13,8 @@ module Pyonnuka
             return unless validate_app_path(app_path)
             generator = Pyonnuka::Generators::AppGenerator.new(app_path)
             generator.start
+          when 'ikeikegogo'
+            Pyonnuka::Application::Server.start(ARGV)
           when '-h'
             out_help
           when '-v'
